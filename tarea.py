@@ -5,16 +5,17 @@ import sys
 from Tkinter import *
 
 
-
+#vector con todas cada string en Mayusculas
 vector=['PIEDRA','PAPEL','TIJERA','LAGARTO','SPOCK']
 
+#Funcion que se ejecuta cuando se da click en el boton
 def hacer_click():
 
         eleccion = opcion.get()
-        eleccion = eleccion.upper()
-        if eleccion not in vector:
-            etiqueta.config(text="Valor incorrecto")
-        else:
+        eleccion = eleccion.upper() #convertir la opcion en Mayusculas para no tener problemas
+        if eleccion not in vector: #---------------------|
+            etiqueta.config(text="Valor incorrecto")   # | condicional que valida si se encuentra esa palabra en
+        else:#-------------------------------------------| el vector
             pc=random.choice(vector)
             etiqueta_4.config(text=pc)
             if eleccion == pc:
@@ -47,9 +48,6 @@ def hacer_click():
 
 
 
-
-
-
 app = Tk()
 app.title('Mi primera App grafica')
 
@@ -64,21 +62,24 @@ etiqueta1.grid(row=1,column=1)
 etiqueta_2 = Label(vp,text="LAGARTO,SPOCK")
 etiqueta_2.grid(row=1,column=2)
 
+#pc eligio:
 etiqueta_3 = Label(vp,text="PC eligio:")
 etiqueta_3.grid(row=3,column=1)
 
+#Da la opcion que eligio la computadora
 etiqueta_4 = Label(vp,text="")
 etiqueta_4.grid(row=3,column=2)
 
+#Muestra si Ganaste o Perdiste
 etiqueta = Label(vp,text="")
 etiqueta.grid(row=5,column=1)
 
-
+#caja donde se recoge la informacion
 valor = ""
 opcion = Entry(vp,width=10,textvariable=valor)
 opcion.grid(row=2,column=1)
 
-
+#boton para validar
 boton = Button(vp,text="click!",command=hacer_click)
 boton.grid(row=2,column=2)
 
