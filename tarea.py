@@ -8,41 +8,43 @@ from Tkinter import *
 # vector con todas cada string en Mayusculas
 vector = ['PIEDRA', 'PAPEL', 'TIJERA', 'LAGARTO', 'SPOCK']
 # Funcion que se ejecuta cuando se da click en el boton
-    def hacer_click():
-        eleccion = opcion.get()
-        eleccion = eleccion.upper()  # convertir en Mayusculas
-        if eleccion not in vector:  # -----------------|condicional que valida
-            etiqueta.config(text="Valor incorrecto")  # |si se encuentra esa
-        else:  # -----------------------------------------|palabra en el vector
-            pc = random.choice(vector)
-            etiqueta_4.config(text=pc)
-            if eleccion == pc:
-                etiqueta.config(text="Empate :| ")
-            elif eleccion == "PIEDRA":
-                if pc == "TIJERA" or pc == "LAGARTO":
-                    etiqueta.config(text="Ganaste :) ")
-                else:
-                    etiqueta.config(text="Perdiste:")
-            elif eleccion == "PAPEL":
-                if pc == "PIEDRA" or pc == "SPOCK":
-                    etiqueta.config(text="Ganaste :) ")
-                else:
-                    etiqueta.config(text="Perdiste:")
-            elif eleccion == "TIJERA":
-                if pc == "PAPEL" or pc == "LAGARTO":
-                    etiqueta.config(text="Ganaste :) ")
-                else:
-                    etiqueta.config(text="Perdiste:")
-            elif eleccion == "LAGARTO":
-                if pc == "SPOCK" or pc == "PAPEL":
-                    etiqueta.config(text="Ganaste :) ")
-                else:
-                    etiqueta.config(text="Perdiste:")
-            elif eleccion == "SPOCK":
-                if pc == "TIJERAS" or pc == "PIEDRA":
-                    etiqueta.config(text="Ganaste :) ")
-                else:
-                    etiqueta.config(text="Perdiste:")
+
+
+def hacer_click():
+    eleccion = opcion.get()
+    eleccion = eleccion.upper()  # convertir en Mayusculas
+    if eleccion not in vector:  # -----------------|condicional que valida
+        etiqueta.config(text="Valor incorrecto")  # |si se encuentra esa
+    else:  # -----------------------------------------|palabra en el vector
+        pc = random.choice(vector)
+        etiqueta_4.config(text=pc)
+        if eleccion == pc:
+            etiqueta.config(text="Empate :| ")
+        elif eleccion == "PIEDRA":
+            if pc == "TIJERA" or pc == "LAGARTO":
+                etiqueta.config(text="Ganaste :) ")
+            else:
+                etiqueta.config(text="Perdiste:")
+        elif eleccion == "PAPEL":
+            if pc == "PIEDRA" or pc == "SPOCK":
+                etiqueta.config(text="Ganaste :) ")
+            else:
+                etiqueta.config(text="Perdiste:")
+        elif eleccion == "TIJERA":
+            if pc == "PAPEL" or pc == "LAGARTO":
+                etiqueta.config(text="Ganaste :) ")
+            else:
+                etiqueta.config(text="Perdiste:")
+        elif eleccion == "LAGARTO":
+            if pc == "SPOCK" or pc == "PAPEL":
+                etiqueta.config(text="Ganaste :) ")
+            else:
+                etiqueta.config(text="Perdiste:")
+        elif eleccion == "SPOCK":
+            if pc == "TIJERAS" or pc == "PIEDRA":
+                etiqueta.config(text="Ganaste :) ")
+            else:
+                etiqueta.config(text="Perdiste:")
 app = Tk()
 app.title('Mi primera App grafica')
 
